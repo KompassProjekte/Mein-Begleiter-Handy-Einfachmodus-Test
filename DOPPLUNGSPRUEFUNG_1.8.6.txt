@@ -1,0 +1,29 @@
+DOPPLUNGS- UND BEDIENWEGPRÜFUNG 1.8.6
+
+GEFUNDEN
+
+1. Mehrere responsive CSS-Stufen regelten dieselbe Navigation unterschiedlich.
+2. Eine zusätzliche mobile „Mehr“-Navigation reagierte nur bis 620 Pixel.
+3. Die Sicherungsseite zeigte verschlüsselte und unverschlüsselte Wege gleichzeitig.
+4. Vollständige Sicherung, kleine Sicherung und Excel-Export waren visuell ähnlich.
+5. Zuordnungsstatus wurde direkt innerhalb des Frageinhalts hinter dem Text gezeigt.
+6. Geräteerkennung und Layoutwechsel verwendeten unterschiedliche Kriterien.
+
+BEREINIGT
+
+1. Eine abschließende, einheitliche Bedienebene steuert Smartphone und Tablet.
+2. Die Geräteklasse wird einmal aus Gerätekennung und Eingabegerät abgeleitet und
+   ändert sich nicht beim Drehen.
+3. Normale Anwender sehen zwei sichere Hauptaktionen für die Sicherung.
+4. Bestehende ältere Funktionen bleiben gesammelt unter „Weitere Möglichkeiten“.
+5. Nicht vollständige Exporte tragen einen deutlichen Warnhinweis.
+6. Fragetext, Arzt/Stelle und Zuordnungsstatus sind getrennte Elemente.
+
+BEWUSST ERHALTEN
+
+Ältere Importfunktionen und interne Kompatibilitätsroutinen bleiben erhalten, weil
+vorhandene Sicherungsdateien weiterhin eingelesen werden müssen. Sie wurden nicht
+gelöscht, sondern nur aus der normalen Hauptansicht herausgenommen.
+
+Es wurde kein neuer MutationObserver ergänzt. Die Sortierung wird nach normalen
+Bedienaktionen erneut angewandt.

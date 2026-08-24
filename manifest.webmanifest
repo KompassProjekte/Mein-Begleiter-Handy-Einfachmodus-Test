@@ -1,0 +1,63 @@
+{
+  "id": "/Mein-Begleiter-Handy-Einfachmodus-Test/",
+  "name": "Mein Begleiter – Handy-Einfachmodus-Test",
+  "short_name": "MB Einfach",
+  "description": "Mein Begleiter 1.8.6: vereinfachter Einstieg auf Smartphone und Tablet mit sicherem Gerätewechsel.",
+  "lang": "de-DE",
+  "dir": "ltr",
+  "start_url": "/Mein-Begleiter-Handy-Einfachmodus-Test/?source=pwa",
+  "scope": "/Mein-Begleiter-Handy-Einfachmodus-Test/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "any",
+  "background_color": "#eff9f6",
+  "theme_color": "#267c73",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/Mein-Begleiter-Handy-Einfachmodus-Test/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Mein-Begleiter-Handy-Einfachmodus-Test/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Mein-Begleiter-Handy-Einfachmodus-Test/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Meine Übersicht",
+      "short_name": "Übersicht",
+      "url": "/Mein-Begleiter-Handy-Einfachmodus-Test/#cockpit",
+      "icons": [
+        {
+          "src": "/Mein-Begleiter-Handy-Einfachmodus-Test/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Neuer Eintrag",
+      "short_name": "Eintrag",
+      "url": "/Mein-Begleiter-Handy-Einfachmodus-Test/#eintrag",
+      "icons": [
+        {
+          "src": "/Mein-Begleiter-Handy-Einfachmodus-Test/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

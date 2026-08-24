@@ -1,0 +1,26 @@
+MEIN BEGLEITER 1.8.6 – ÄNDERUNGSLISTE GEGENÜBER 1.8.5.1
+
+- Freiwilliger Handy-Einfachmodus ergänzt.
+- Auswahl der Ansicht beim ersten Start ergänzt.
+- Umschaltung zwischen Einfachmodus und vollständiger Ansicht ergänzt.
+- Kurze, erneut aufrufbare Einführung ergänzt.
+- Smartphone und Tablet werden unabhängig von der Ausrichtung klassifiziert.
+- Einheitliches kompaktes Menü für Smartphone und Tablet ergänzt.
+- Menü berücksichtigt sichere Bildschirmränder und ist intern scrollbar.
+- Querformatdarstellung für niedrige Bildschirmhöhen verdichtet.
+- Fragetext und Zuordnungsstatus optisch und semantisch getrennt.
+- Dokumentenkategorien alphabetisch nach deutscher Sortierung geordnet.
+- Vergleichbare Arzt-/Stellenlisten werden ebenfalls sortiert.
+- Sicherungsseite auf zwei sichere Hauptaktionen konzentriert.
+- Alte und seltene Exportwege unter „Weitere Möglichkeiten“ zusammengefasst.
+- Excel-Export und Zusatzsicherung ohne Dokumente eindeutig gekennzeichnet.
+- Versions-, Manifest-, Scope- und Cachekennung auf 1.8.6 getrennt.
+- Ausgangsdaten, Verschlüsselung und Datenstruktur unverändert übernommen.
+- Eigener lokaler Speichername verhindert eine Vermischung mit 1.8.5.1.
+
+Nicht verändert:
+- Bestehende lokale Datenstruktur und Sicherungsstruktur
+- AES-256-GCM-Verschlüsselung und PBKDF2-Schlüsselableitung
+- Integritätsprüfung und kontrollierte Übernahme
+- Rücksicherung vor dem Ersetzen vorhandener Daten
+- Kompatibilität mit Sicherungen der Linie 1.8

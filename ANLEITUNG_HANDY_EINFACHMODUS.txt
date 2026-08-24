@@ -1,0 +1,51 @@
+MEIN BEGLEITER 1.8.6 PWA – HANDY-EINFACHMODUS-TEST
+
+1. ERSTER START
+
+Beim ersten Start wählen Sie:
+- Einfach starten: nur die wichtigsten Bereiche werden unmittelbar gezeigt.
+- Alle Funktionen anzeigen: der vollständige Funktionsumfang wird gezeigt.
+- Später entscheiden: die Anwendung übernimmt die Empfehlung für das Gerät.
+
+Keine Auswahl löscht oder verändert Daten.
+
+2. MENÜ
+
+Auf Smartphone und Tablet öffnet „Mehr“ das übersichtliche Bereichsmenü.
+Im Einfachmodus sind direkt erreichbar:
+- Meine Übersicht
+- Tages-Check
+- Neuer Eintrag
+- Termine und Fragen
+- Medikamente
+- Dokument ablegen
+- Sicherung und Gerätewechsel
+
+3. ANSICHT WECHSELN
+
+Öffnen Sie „Mehr“ und wählen Sie unter „Ansicht“:
+- Einfachmodus
+- Vollständige Ansicht
+
+Die Daten bleiben beim Wechsel vollständig erhalten. Die Auswahl wird nur auf
+dem verwendeten Gerät gespeichert.
+
+4. HILFE ERNEUT ÖFFNEN
+
+Unter „Mehr“ kann „Einführung anzeigen“ jederzeit aufgerufen werden.
+
+5. SICHERUNG
+
+Für eine normale Sicherung oder einen Gerätewechsel verwenden Sie ausschließlich:
+- Sichere vollständige Sicherung erstellen
+- Sichere Sicherung einlesen
+
+Weitere ältere Exportmöglichkeiten befinden sich unter „Weitere Möglichkeiten“.
+Der Excel-Export und die kleine Zusatzsicherung ohne Dokumente sind keine
+vollständigen Sicherungen.
+
+WICHTIG
+
+Es findet keine automatische Synchronisation statt. Bewahren Sie Sicherungsdatei
+und Kennwort getrennt und sicher auf. Testen Sie diese Ausgabe ausschließlich mit
+erfundenen Daten. Die Anwendung ersetzt keine medizinische Beratung.

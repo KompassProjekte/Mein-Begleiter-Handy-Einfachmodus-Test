@@ -1,0 +1,19 @@
+GITHUB-UPLOAD – GETRENNTER HANDY-EINFACHMODUS-TEST
+
+Empfohlener Repository-Name:
+Mein-Begleiter-Handy-Einfachmodus-Test
+
+Empfohlene Adresse:
+https://kompassprojekte.github.io/Mein-Begleiter-Handy-Einfachmodus-Test/
+
+1. Neues öffentliches Test-Repository mit dem genannten Namen anlegen.
+2. Nur den Inhalt dieses Versionsordners hochladen, nicht den äußeren Ordner.
+3. Prüfen, dass index.html im Stamm des Repositorys liegt.
+4. In GitHub Pages „Deploy from a branch“, Branch „main“, Ordner „/(root)“ wählen.
+5. Veröffentlichung abwarten und die empfohlene Adresse öffnen.
+6. Sichtbare Versionsangabe 1.8.6 kontrollieren.
+7. Manifest, Installation, Offlinebetrieb und Aktualisierung testen.
+8. Auf Smartphone und Tablet Hoch- und Querformat prüfen.
+9. Ausschließlich erfundene Testdaten verwenden.
+
+Die bisherigen Repositorys der Versionen 1.8.4 und 1.8.5.1 nicht überschreiben.
