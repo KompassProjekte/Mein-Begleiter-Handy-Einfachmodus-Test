@@ -2,7 +2,7 @@
   "id": "/Mein-Begleiter-Handy-Einfachmodus-Test/",
   "name": "Mein Begleiter – Handy-Einfachmodus-Test",
   "short_name": "MB Einfach",
-  "description": "Mein Begleiter 1.8.6: vereinfachter Einstieg auf Smartphone und Tablet mit sicherem Gerätewechsel.",
+  "description": "Mein Begleiter 1.8.6.1: Sicherungskompatibilitätsfix für 1.8.5.1 mit Handy-Einfachmodus.",
   "lang": "de-DE",
   "dir": "ltr",
   "start_url": "/Mein-Begleiter-Handy-Einfachmodus-Test/?source=pwa",

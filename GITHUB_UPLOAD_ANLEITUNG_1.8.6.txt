@@ -11,7 +11,7 @@ https://kompassprojekte.github.io/Mein-Begleiter-Handy-Einfachmodus-Test/
 3. Prüfen, dass index.html im Stamm des Repositorys liegt.
 4. In GitHub Pages „Deploy from a branch“, Branch „main“, Ordner „/(root)“ wählen.
 5. Veröffentlichung abwarten und die empfohlene Adresse öffnen.
-6. Sichtbare Versionsangabe 1.8.6 kontrollieren.
+6. Sichtbare Versionsangabe 1.8.6.1 kontrollieren.
 7. Manifest, Installation, Offlinebetrieb und Aktualisierung testen.
 8. Auf Smartphone und Tablet Hoch- und Querformat prüfen.
 9. Ausschließlich erfundene Testdaten verwenden.

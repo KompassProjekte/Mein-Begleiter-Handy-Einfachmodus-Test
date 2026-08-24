@@ -1,5 +1,5 @@
 MEIN BEGLEITER
-Version 1.8.6 PWA – Handy-Einfachmodus-Test
+Version 1.8.6.1 PWA – Sicherungskompatibilitätsfix
 
 TESTAUSGABE – NUR MIT ERFUNDENEN DATEN VERWENDEN
 
@@ -9,6 +9,11 @@ Die PWA bietet einen freiwilligen Einfachmodus, eine einheitliche Smartphone-
 und Tablet-Navigation sowie eine vereinfachte Sicherungsseite. Alle fachlichen
 Funktionen und die vollständige verschlüsselte Gerätewechselfunktion der Version
 1.8.5.1 bleiben erhalten.
+
+Korrektur 1.8.6.1:
+- Verschlüsselte Sicherungen aus Version 1.8.5.1 werden ausdrücklich akzeptiert.
+- Die zulässigen Quellversionen werden in einer zentralen Liste verwaltet.
+- „Kennwort anzeigen“ wird bei jedem Öffnen des Dialogs wieder ausgeschaltet.
 
 Wichtige Unterlagen:
 - ANLEITUNG_HANDY_EINFACHMODUS.txt
@@ -20,6 +25,7 @@ Wichtige Unterlagen:
 - PRUEFPROTOKOLL.html
 - TESTBOGEN.html
 - GITHUB_UPLOAD_ANLEITUNG_1.8.6.txt
+- SICHERUNGSKOMPATIBILITAETSFIX_1.8.6.1.txt
 
 Empfohlene getrennte Testadresse:
 https://kompassprojekte.github.io/Mein-Begleiter-Handy-Einfachmodus-Test/

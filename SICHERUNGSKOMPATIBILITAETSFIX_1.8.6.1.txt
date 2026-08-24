@@ -1,0 +1,37 @@
+MEIN BEGLEITER 1.8.6.1 – SICHERUNGSKOMPATIBILITÄTSFIX
+
+Ausgangsfehler
+
+Eine technisch korrekt entschlüsselte .mbg-Sicherung aus Version 1.8.5.1 wurde
+mit der Meldung „Die Programmversion 1.8.5.1 ist nicht freigegeben“ abgelehnt.
+
+Ursache
+
+Die Kompatibilitätsprüfung enthielt 1.8.3, 1.8.4, 1.8.5 und 1.8.6, aber nicht
+die tatsächlich verwendete Zwischenversion 1.8.5.1.
+
+Korrektur
+
+Die zentral geführte Freigabeliste enthält jetzt:
+- 1.8.3
+- 1.8.4
+- 1.8.5
+- 1.8.5.1
+- 1.8.6
+- 1.8.6.1
+
+Die Datenstrukturversion 1.8, das Sicherungsformat 2, die AES-256-GCM-
+Verschlüsselung, PBKDF2 mit 600.000 Iterationen und sämtliche Integritätsprüfungen
+bleiben unverändert.
+
+Zusätzliche Sicherheitskorrektur
+
+Der Schalter „Kennwort anzeigen“ wird bei jedem Öffnen des Sicherungsdialogs
+automatisch ausgeschaltet. Das Kennwortfeld startet wieder verdeckt.
+
+Testvorgabe
+
+Die vorhandene .mbg-Datei aus Version 1.8.5.1 erneut auf Handy und Samsung A9
+prüfen. Nach erfolgreicher Entschlüsselung müssen Quellversion, Eintragszahlen,
+Dokumentenmappen und Dokumentseiten angezeigt werden. Zunächst ausschließlich
+erfundene Testdaten verwenden.
