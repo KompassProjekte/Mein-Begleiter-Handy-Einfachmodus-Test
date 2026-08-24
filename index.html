@@ -7,7 +7,7 @@
       content="width=device-width,initial-scale=1,viewport-fit=cover"
     />
     <meta name="theme-color" content="#225b56" />
-    <title>Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix</title>
+    <title>Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix</title>
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" href="./icons/favicon-64.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon-180.png" />
@@ -1704,7 +1704,7 @@
           </button>
         </nav>
         <div class="seitenfuss">
-          <strong>Version 1.8.6.1 PWA · SICHERUNGSKOMPATIBILITÄTSFIX</strong
+          <strong>Version 1.8.6.2 PWA · SICHERUNGSKOMPATIBILITÄTSFIX</strong
           >Stand: 24.08.2026<br />Entwickelt von Lothar &amp; Nimbus
         </div>
       </aside>
@@ -2577,7 +2577,7 @@
           </article>
           <header class="kopf">
             <div>
-              <h2>Sicherung &amp; Einstellungen</h2>
+              <h2>Sicherung &amp; Gerätewechsel</h2>
               <p>
                 Deine Daten bleiben in diesem Browser. Eine Sicherungskopie
                 schützt vor Verlust.
@@ -2661,7 +2661,7 @@
                 <span>Persönlicher Browser-Speicher</span>
               </div>
               <p>
-                <strong>Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix</strong>
+                <strong>Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix</strong>
               </p>
               <p>
                 Ihre Einträge werden ausschließlich lokal im persönlichen
@@ -2746,7 +2746,7 @@
         <div class="dialog-kopf">
           <div>
             <h3 id="dialogTitel">Neuer Eintrag</h3>
-            <div class="hinweis">
+            <div class="hinweis" id="eintragDialogHinweis">
               Gelb markierte Angaben sind für einen vollständigen Termin
               besonders hilfreich.
             </div>
@@ -2758,7 +2758,7 @@
               id="abbrechenOben"
             >
               Abbrechen</button
-            ><button class="knopf klein" type="submit" form="eintragForm">
+            ><button class="knopf klein eintrag-speichern" type="submit" form="eintragForm">
               💾 Eintrag speichern</button
             ><button
               class="schliessen"
@@ -2962,7 +2962,7 @@
         <div class="dialog-fuss">
           <button class="knopf sekundaer" type="button" id="abbrechen">
             Abbrechen</button
-          ><button class="knopf" type="submit">💾 Eintrag speichern</button>
+          ><button class="knopf eintrag-speichern" type="submit">💾 Eintrag speichern</button>
         </div>
       </form>
     </dialog>
@@ -4020,7 +4020,7 @@
               return `<div class="tagebuch-eintrag"><div class="tagebuch-datum">${datumLang(e.datum)}</div><div class="tagebuch-text"><h5>${esc(ueberschrift)}</h5>${texte.join("") || "<p>Eintrag ohne weitere Beschreibung.</p>"}</div></div>`;
             })
             .join("");
-        html += `</div><p class="hinweis">Erstellt mit Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix · Lothar &amp; Nimbus</p>`;
+        html += `</div><p class="hinweis">Erstellt mit Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix · Lothar &amp; Nimbus</p>`;
         $("#berichtAusgabe").innerHTML = html;
         gespeichertenEntwurfAnzeigen();
       }
@@ -4082,7 +4082,7 @@
           });
         if (schluss)
           html += `<div class="buch-seite"><h4>Mein Rückblick und Ausblick</h4><div class="buch-schluss"><p>${esc(schluss)}</p></div></div>`;
-        html += `<p class="hinweis">Erstellt mit Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix · Lothar &amp; Nimbus · ${datumLang(heuteIso())}</p>`;
+        html += `<p class="hinweis">Erstellt mit Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix · Lothar &amp; Nimbus · ${datumLang(heuteIso())}</p>`;
         $("#berichtAusgabe").innerHTML = html;
       }
       function renderBericht() {
@@ -4348,7 +4348,7 @@
           });
         if (schluss)
           html += `<div class="buch-seite"><h4>Mein Rückblick und Ausblick</h4><div class="buch-schluss"><p>${esc(schluss)}</p></div></div>`;
-        html += `<p class="hinweis">${fassung === "lese" ? "Persönliche Leseausgabe – aus meinen eigenen Einträgen zusammengestellt. " : ""}Erstellt mit Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix · Lothar &amp; Nimbus · ${datumLang(heuteIso())}</p>`;
+        html += `<p class="hinweis">${fassung === "lese" ? "Persönliche Leseausgabe – aus meinen eigenen Einträgen zusammengestellt. " : ""}Erstellt mit Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix · Lothar &amp; Nimbus · ${datumLang(heuteIso())}</p>`;
         $("#berichtAusgabe").innerHTML = html;
         gespeichertenEntwurfAnzeigen();
       }
@@ -4393,6 +4393,19 @@
         $("#dialogTitel").textContent = nurBefinden
           ? "Tages-Check eintragen"
           : "Neuer Eintrag";
+        const dialog = $("#eintragDialog");
+        dialog.classList.toggle("tagescheck-dialog", nurBefinden);
+        $("#eintragDialogHinweis").textContent = nurBefinden
+          ? "Trage nur die Werte ein, die du beobachten möchtest. Alle Angaben sind freiwillig."
+          : "Gelb markierte Angaben sind für einen vollständigen Termin besonders hilfreich.";
+        $$(".eintrag-speichern").forEach((knopf) =>
+          knopf.textContent = nurBefinden
+            ? "💾 Tages-Check speichern"
+            : "💾 Eintrag speichern",
+        );
+        ["arztAuswahl", "arzt", "terminstatus", "massnahme", "bemerkung", "gedanken", "buchMoment", "rechnung", "rezept", "fahrt"].forEach((id) =>
+          $("#" + id)?.closest(".feld")?.classList.toggle("tagescheck-ausblenden", nurBefinden),
+        );
         $("#eintragDialog").showModal();
         eintragAusgang = formularStand();
         setTimeout(
@@ -4408,6 +4421,10 @@
       window.bearbeiten = (id) => {
         const e = daten.eintraege.find((x) => x.id === id);
         if (!e) return;
+        $("#eintragDialog").classList.remove("tagescheck-dialog");
+        $$(".tagescheck-ausblenden").forEach((feld) => feld.classList.remove("tagescheck-ausblenden"));
+        $("#eintragDialogHinweis").textContent = "Gelb markierte Angaben sind für einen vollständigen Termin besonders hilfreich.";
+        $$(".eintrag-speichern").forEach((knopf) => (knopf.textContent = "💾 Eintrag speichern"));
         $("#eintragId").value = e.id;
         [
           "datum",
@@ -6434,7 +6451,7 @@
           const version = Number(obj.version || obj.formatVersion || 1);
           if (!Number.isFinite(version) || version > APP_VERSION)
             throw new Error(
-              `Diese Sicherung wurde mit einer neueren Datenstruktur (${obj.version || "unbekannt"}) erstellt und kann mit Version 1.8.6.1 nicht sicher geöffnet werden.`,
+              `Diese Sicherung wurde mit einer neueren Datenstruktur (${obj.version || "unbekannt"}) erstellt und kann mit Version 1.8.6.2 nicht sicher geöffnet werden.`,
             );
           return {
             obj,
@@ -6718,13 +6735,14 @@
           pass = $("#geraetePasswort"),
           pass2 = $("#geraetePasswort2"),
           weiter = $("#geraeteWeiter");
-        const APP_VERSION_GERAETEWECHSEL = "1.8.6.1";
+        const APP_VERSION_GERAETEWECHSEL = "1.8.6.2";
         const FREIGEGEBENE_QUELLVERSIONEN = new Set([
           "1.8.3",
           "1.8.4",
           "1.8.5",
           "1.8.5.1",
           "1.8.6",
+          "1.8.6.1",
           APP_VERSION_GERAETEWECHSEL,
         ]);
         const DATENSTRUKTUR_VERSION = "1.8";
@@ -7167,7 +7185,7 @@
                 vorbereiteteRuecksicherung = await ruecksicherungVorbereiten(kennwort);
               }
               $("#geraetePruefung").innerHTML =
-                `<strong>✓ Entschlüsselung und Integritätsprüfung bestanden</strong><p>Datei: ${esc(importDatei.name)} · ${dateigroesse(importDatei.size)}</p><p>Erstellt: ${new Date(innen.erstelltAm).toLocaleString("de-DE")} auf ${esc(innen.quellgeraet)} · Quellversion ${esc(innen.appVersion)}</p><p>Sicherungskennung: ${esc(innen.sicherungsId)}</p><p>${stats.eintraege} Einträge · ${stats.termine} Termine · ${stats.fragen} Fragen · ${stats.medikamente} Medikamente</p><p>${stats.dokumente} Dokumentenmappen · ${stats.seiten} Dokumentseiten · ${dateigroesse(stats.dokumentBytes)}</p><p>Speicher: ${esc(speicher.text)}</p><p>Auf diesem Gerät vorhanden: ${ziel.eintraege} Einträge · ${ziel.dokumente} Dokumentenmappen.</p>${zielIstLeer ? '<p><strong>✓ Das Zielgerät ist vollständig leer. Eine Rücksicherung ist nicht erforderlich.</strong></p>' : '<p><strong>Vorhandene Zieldaten werden ersetzt. Laden Sie deshalb zuerst die verschlüsselte Rücksicherung herunter.</strong></p>'}<p><strong>Eine Zusammenführung ist in Version 1.8.6.1 sicherheitshalber deaktiviert.</strong></p>`;
+                `<strong>✓ Entschlüsselung und Integritätsprüfung bestanden</strong><p>Datei: ${esc(importDatei.name)} · ${dateigroesse(importDatei.size)}</p><p>Erstellt: ${new Date(innen.erstelltAm).toLocaleString("de-DE")} auf ${esc(innen.quellgeraet)} · Quellversion ${esc(innen.appVersion)}</p><p>Sicherungskennung: ${esc(innen.sicherungsId)}</p><p>${stats.eintraege} Einträge · ${stats.termine} Termine · ${stats.fragen} Fragen · ${stats.medikamente} Medikamente</p><p>${stats.dokumente} Dokumentenmappen · ${stats.seiten} Dokumentseiten · ${dateigroesse(stats.dokumentBytes)}</p><p>Speicher: ${esc(speicher.text)}</p><p>Auf diesem Gerät vorhanden: ${ziel.eintraege} Einträge · ${ziel.dokumente} Dokumentenmappen.</p>${zielIstLeer ? '<p><strong>✓ Das Zielgerät ist vollständig leer. Eine Rücksicherung ist nicht erforderlich.</strong></p>' : '<p><strong>Vorhandene Zieldaten werden ersetzt. Laden Sie deshalb zuerst die verschlüsselte Rücksicherung herunter.</strong></p>'}<p><strong>Eine Zusammenführung ist in Version 1.8.6.2 sicherheitshalber deaktiviert.</strong></p>`;
               $("#geraetePruefung").hidden = false;
               pass.disabled = true;
               weiter.textContent = zielIstLeer
@@ -8137,7 +8155,7 @@
 <div class="pwa-leiste" aria-label="App-Status"><span class="pwa-edition"><span class="edition-lang">HANDY-EINFACHMODUS-TEST</span><span class="edition-kurz">EINFACH-TEST</span></span><span class="pwa-status" id="pwaStatus">Online</span><button class="knopf pwa-install" id="pwaInstallieren" type="button" hidden>App installieren</button></div>
 <div class="pwa-update" id="pwaUpdate" role="status"><strong>Eine neue Version von Mein Begleiter ist verfügbar.</strong><p>Vor größeren Aktualisierungen empfehlen wir eine vollständige Sicherung.</p><div class="listen-aktionen"><button class="knopf klein" id="pwaJetzt" type="button">Jetzt aktualisieren</button><button class="knopf klein sekundaer" id="pwaSpaeter" type="button">Später</button></div></div>
 <dialog class="pwa-dialog" id="pwaWillkommen"><div class="dialog-inhalt"><h3>Willkommen beim Praxistest</h3><p>Diese Version startet vollständig leer. Alle Eingaben bleiben auf diesem Gerät, sofern du sie nicht selbst als Sicherung exportierst.</p><p>Die Anwendung ersetzt keine medizinische Beratung. Nach dem Test kannst du alle Testdaten unter „Sicherung“ vollständig löschen.</p></div><div class="dialog-fuss"><button class="knopf" id="pwaStart" type="button">Praxistest beginnen</button><button class="knopf sekundaer" id="pwaHinweisAus" type="button">Hinweis schließen</button></div></dialog>
-<dialog class="pwa-dialog" id="pwaFeedback"><div class="dialog-kopf"><h3>Praxistest &amp; Rückmeldung</h3><button type="button" id="pwaFeedbackZu">×</button></div><div class="dialog-inhalt pwa-feedback"><p>Diese Rückmeldung enthält keine Gesundheitsdaten aus der App.</p><label>Gerät<input id="fbGeraet" placeholder="z. B. Samsung Galaxy" /></label><label>Betriebssystem<input id="fbSystem" placeholder="z. B. Android" /></label><label>Browser<input id="fbBrowser" placeholder="z. B. Chrome" /></label><label>Installation gelungen<select id="fbInstall"><option>Nicht geprüft</option><option>Ja</option><option>Nein</option></select></label><label>Offlinebetrieb gelungen<select id="fbOffline"><option>Nicht geprüft</option><option>Ja</option><option>Nein</option></select></label><label>Getesteter Bereich<input id="fbBereich" placeholder="z. B. Termine und Dokumente" /></label><label>Fehlerbeschreibung<textarea id="fbFehler"></textarea></label><label>Verbesserungsvorschlag<textarea id="fbVorschlag"></textarea></label></div><div class="dialog-fuss"><button class="knopf sekundaer" id="fbText" type="button">Rückmeldung speichern</button><button class="knopf" id="fbJson" type="button">JSON speichern</button></div></dialog>
+<dialog class="pwa-dialog" id="pwaFeedback"><div class="dialog-kopf"><h3>Praxistest &amp; Rückmeldung</h3><button type="button" id="pwaFeedbackZu" aria-label="Fenster schließen">×</button></div><div class="dialog-inhalt pwa-feedback"><p><strong>Es wird nichts automatisch versendet.</strong> Die heruntergeladene Rückmeldung enthält keine Gesundheitsdaten aus der App. Du entscheidest selbst, ob und wie du die Datei weitergibst.</p><label>Gerät<input id="fbGeraet" placeholder="z. B. Samsung Galaxy" /></label><label>Betriebssystem<input id="fbSystem" placeholder="z. B. Android" /></label><label>Browser<input id="fbBrowser" placeholder="z. B. Chrome" /></label><label>Installation gelungen<select id="fbInstall"><option>Nicht geprüft</option><option>Ja</option><option>Nein</option></select></label><label>Offlinebetrieb gelungen<select id="fbOffline"><option>Nicht geprüft</option><option>Ja</option><option>Nein</option></select></label><label>Getesteter Bereich<input id="fbBereich" placeholder="z. B. Termine und Dokumente" /></label><label>Fehlerbeschreibung<textarea id="fbFehler"></textarea></label><label>Verbesserungsvorschlag<textarea id="fbVorschlag"></textarea></label><details class="fb-dateiformate"><summary>Weitere Dateiformate</summary><p class="hinweis">Die technische Datei ist für eine spätere maschinelle Auswertung gedacht.</p><button class="knopf sekundaer" id="fbJson" type="button">Technische Datei herunterladen</button></details></div><div class="dialog-fuss"><button class="knopf" id="fbText" type="button">📥 Rückmeldung herunterladen</button></div></dialog>
 <script>
 (() => {
   const EDITION = "praxistest", HINWEIS = "mein-begleiter-handy-einfachmodus-test-pwa-v1-8-6-erststart-v1";
@@ -8176,12 +8194,12 @@
   if (EDITION === 'praxistest') {
     const feedbackKnopf = document.createElement('button'); feedbackKnopf.className='knopf sekundaer'; feedbackKnopf.type='button'; feedbackKnopf.textContent='📝 Praxistest-Rückmeldung';
     const ziel = document.querySelector('#seite-cockpit .kopf-aktionen'); if (ziel) ziel.appendChild(feedbackKnopf);
-    const dialog = document.getElementById('pwaFeedback'); feedbackKnopf.addEventListener('click', () => dialog.showModal()); document.getElementById('pwaFeedbackZu').addEventListener('click', () => dialog.close());
+    const dialog = document.getElementById('pwaFeedback'); feedbackKnopf.addEventListener('click', () => { const ua=navigator.userAgent; if(!document.getElementById('fbSystem').value) document.getElementById('fbSystem').value=/Android/i.test(ua)?'Android':/iPhone|iPad/i.test(ua)?'iOS / iPadOS':/Windows/i.test(ua)?'Windows':''; if(!document.getElementById('fbBrowser').value) document.getElementById('fbBrowser').value=/Edg/i.test(ua)?'Edge':/Chrome/i.test(ua)?'Chrome':/Firefox/i.test(ua)?'Firefox':/Safari/i.test(ua)?'Safari':''; dialog.showModal(); }); document.getElementById('pwaFeedbackZu').addEventListener('click', () => dialog.close());
     const wert = id => document.getElementById(id).value;
-    const rueckmeldung = () => ({version:'Mein Begleiter 1.8.6.1 PWA – Sicherungskompatibilitätsfix',erstellt:new Date().toISOString(),geraet:wert('fbGeraet'),betriebssystem:wert('fbSystem'),browser:wert('fbBrowser'),installation:wert('fbInstall'),offlinebetrieb:wert('fbOffline'),getesteterBereich:wert('fbBereich'),fehler:wert('fbFehler'),verbesserungsvorschlag:wert('fbVorschlag'),hinweis:'Keine Gesundheitsdaten automatisch aufgenommen.'});
+    const rueckmeldung = () => ({version:'Mein Begleiter 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix',erstellt:new Date().toISOString(),geraet:wert('fbGeraet'),betriebssystem:wert('fbSystem'),browser:wert('fbBrowser'),installation:wert('fbInstall'),offlinebetrieb:wert('fbOffline'),getesteterBereich:wert('fbBereich'),fehler:wert('fbFehler'),verbesserungsvorschlag:wert('fbVorschlag'),hinweis:'Keine Gesundheitsdaten automatisch aufgenommen.'});
     const laden = (inhalt,name,typ) => { const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([inhalt],{type:typ})); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); };
     document.getElementById('fbJson').addEventListener('click', () => laden(JSON.stringify(rueckmeldung(),null,2),'Mein_Begleiter_Praxistest_Rueckmeldung.json','application/json'));
-    document.getElementById('fbText').addEventListener('click', () => { const r=rueckmeldung(); laden(Object.entries(r).map(([k,v])=>k+': '+v).join('\n'),'Mein_Begleiter_Praxistest_Rueckmeldung.txt','text/plain'); });
+    document.getElementById('fbText').addEventListener('click', () => { const r=rueckmeldung(), labels={version:'Version',erstellt:'Erstellt',geraet:'Gerät',betriebssystem:'Betriebssystem',browser:'Browser',installation:'Installation gelungen',offlinebetrieb:'Offlinebetrieb gelungen',getesteterBereich:'Getesteter Bereich',fehler:'Fehlerbeschreibung',verbesserungsvorschlag:'Verbesserungsvorschlag',hinweis:'Datenschutzhinweis'}; laden('MEIN BEGLEITER – PRAXISTEST-RÜCKMELDUNG\n\n'+Object.entries(r).map(([k,v])=>(labels[k]||k)+': '+v).join('\n'),'Mein_Begleiter_Praxistest_Rueckmeldung.txt','text/plain'); });
   }
 })();
 </script>
@@ -8200,6 +8218,24 @@
   #seite-sicherung .v186-weitere>summary{cursor:pointer;padding:15px 17px;font-weight:850;color:var(--petrol);min-height:52px;display:flex;align-items:center}
   #seite-sicherung .v186-weitere>.raster{padding:0 12px 12px}
   #seite-sicherung .v186-keine-sicherung{font-weight:800;color:#8a4d13}
+  .tagescheck-ausblenden{display:none!important}
+  .tagescheck-dialog .dialog-schnellaktionen>#abbrechenOben,.tagescheck-dialog .dialog-schnellaktionen>.eintrag-speichern{display:none!important}
+  .tagescheck-dialog .dialog-inhalt{padding-bottom:110px}
+  .tagescheck-dialog .dialog-fuss{position:sticky;bottom:0;z-index:5;background:#fff;border-top:1px solid var(--linie);padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+  .v186-breit{grid-column:1/-1}
+  .v1862-einstellungen{width:min(920px,calc(100% - 18px));max-height:calc(100dvh - 18px)}
+  .v1862-abschnitt{padding:16px 0;border-bottom:1px solid var(--linie)}
+  .v1862-abschnitt h4{font-size:1.2rem;margin:0 0 12px}
+  .v1862-schriftwahl,.v1862-ansichten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .v1862-schriftwahl button,.v1862-ansichten button{min-height:58px;border:2px solid #b5d0c8;border-radius:14px;background:#fff;color:#173b39;font:800 1rem/1.25 system-ui;padding:12px}
+  .v1862-schriftwahl button.aktiv,.v1862-ansichten button.aktiv{border-color:#17665e;background:#e6f5f0;box-shadow:0 0 0 2px #17665e22}
+  .v1862-ansichten{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .v1862-ansichten button{display:grid;justify-items:center;gap:7px;min-height:150px;text-align:center}
+  .v1862-ansichten small{font-size:.9em;font-weight:550}.v1862-symbol{font-size:2rem;line-height:1}
+  .v1862-aktuell{display:none;color:#17665e;font-size:.86em}.v1862-ansichten button.aktiv .v1862-aktuell{display:block}
+  .v1862-hilfe{width:100%;margin-bottom:18px}
+  #v186TagescheckZiel>.tc-einstellungen{box-shadow:none;border:0;padding:0;margin:0}
+  html.schrift-gross{font-size:18px}html.schrift-sehr-gross{font-size:20px}
   @media(max-width:1100px){
     html.v186-kompakt body{overflow-x:hidden}
     html.v186-kompakt .app{display:block;min-height:100dvh}
@@ -8226,6 +8262,9 @@
     #fragenListe .frage{grid-template-columns:auto minmax(0,1fr)!important}
     #fragenListe .frage>.knopf{grid-column:2}
     .v186-menue-inhalt{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .v186-menue-inhalt button{font-size:1rem;min-height:64px}
+    .v1862-schriftwahl{grid-template-columns:1fr}.v1862-ansichten{grid-template-columns:1fr}
+    .v1862-symbol{font-size:1.8rem}
   }
   @media(max-width:360px){.v186-menue-inhalt{grid-template-columns:1fr}}
   @media(orientation:landscape) and (max-height:520px){
@@ -8233,11 +8272,12 @@
     .v186-menue-inhalt button{min-height:48px}
     .v186-menue-trenner{grid-column:1/-1;padding-top:5px}
   }
+  @media(orientation:landscape) and (max-height:520px){.tagescheck-dialog .dialog-kopf{padding:10px 14px}.tagescheck-dialog .dialog-inhalt{padding-bottom:82px}.tagescheck-dialog .dialog-fuss{padding:8px 12px calc(8px + env(safe-area-inset-bottom))}}
   @media print{.v186-menuknopf,.v186-menue,.v186-dialog{display:none!important}}
 </style>
 <button class="v186-menuknopf" id="v186Menuknopf" type="button" aria-controls="v186Menue" aria-expanded="false">☰ Mehr</button>
 <div class="v186-menue" id="v186Menue" role="dialog" aria-modal="true" aria-label="Bereiche von Mein Begleiter">
-  <div class="v186-menue-kopf"><div><strong>Mein Begleiter</strong><br><span class="v186-status" id="v186ModusStatus">Einfachmodus</span></div><button id="v186MenueZu" type="button" aria-label="Menü schließen">×</button></div>
+  <div class="v186-menue-kopf"><div><strong>Mein Begleiter</strong><br><span class="v186-status" id="v186ModusStatus">Einfache Ansicht</span></div><button id="v186MenueZu" type="button" aria-label="Menü schließen">×</button></div>
   <div class="v186-menue-inhalt">
     <button class="wichtig" data-v186-seite="cockpit">🏠 Meine Übersicht</button>
     <button class="wichtig" data-v186-aktion="tagescheck">♡ Tages-Check</button>
@@ -8251,16 +8291,24 @@
     <button class="v186-nur-voll" data-v186-seite="kosten">€ Kosten</button>
     <button class="v186-nur-voll" data-v186-seite="verlauf">📈 Verlauf</button>
     <button class="v186-nur-voll" data-v186-seite="bericht">🖨 Bericht &amp; Buch</button>
-    <div class="v186-menue-trenner">Ansicht</div>
-    <button data-v186-modus="einfach">✓ Einfachmodus</button>
-    <button data-v186-modus="voll">▦ Vollständige Ansicht</button>
-    <button data-v186-hilfe>❔ Einführung anzeigen</button>
+    <div class="v186-menue-trenner">Hilfe &amp; Einstellungen</div>
+    <button class="v186-breit" data-v186-hilfe>ℹ️ Einführung und Hilfe anzeigen</button>
+    <button class="v186-breit" data-v186-einstellungen>⚙️ Einstellungen</button>
   </div>
 </div>
 <dialog class="pwa-dialog" id="v186Start">
   <div class="dialog-kopf"><h3>Wie möchten Sie „Mein Begleiter“ verwenden?</h3></div>
   <div class="dialog-inhalt"><p><strong>Einfach starten</strong> zeigt zunächst nur die wichtigsten Funktionen. Alle weiteren Bereiche und alle Daten bleiben erhalten.</p><p><strong>Alle Funktionen anzeigen</strong> zeigt den vollständigen Funktionsumfang.</p><p class="hinweis" id="v186Empfehlung"></p></div>
   <div class="dialog-fuss"><button class="knopf" data-v186-start="einfach">Einfach starten</button><button class="knopf sekundaer" data-v186-start="voll">Alle Funktionen anzeigen</button><button class="knopf sekundaer" data-v186-start="empfohlen">Später entscheiden</button></div>
+</dialog>
+<dialog class="pwa-dialog v1862-einstellungen" id="v186Einstellungen">
+  <div class="dialog-kopf"><div><h3>⚙️ Einstellungen</h3><p class="hinweis">Darstellung und persönliche Auswahl anpassen. Deine gespeicherten Einträge bleiben unverändert.</p></div><button id="v186EinstellungenZu" type="button" aria-label="Einstellungen schließen">×</button></div>
+  <div class="dialog-inhalt">
+    <section class="v1862-abschnitt"><h4>Schriftgröße</h4><div class="v1862-schriftwahl"><button type="button" data-v186-schrift="normal">Normal</button><button type="button" data-v186-schrift="gross">Groß</button><button type="button" data-v186-schrift="sehr-gross">Sehr groß</button></div></section>
+    <section class="v1862-abschnitt"><button class="knopf sekundaer v1862-hilfe" type="button" data-v186-hilfe>ℹ️ Einführung und Hilfe anzeigen</button><h4>Ansicht</h4><div class="v1862-ansichten"><button type="button" data-v186-modus="einfach"><span class="v1862-symbol">👁️</span><strong>Einfache Ansicht</strong><small>Zeigt die wichtigsten Bereiche. Alle Daten und Funktionen bleiben erhalten.</small><span class="v1862-aktuell">Aktuell ausgewählt</span></button><button type="button" data-v186-modus="voll"><span class="v1862-symbol">▦</span><strong>Vollständige Ansicht</strong><small>Zeigt alle Bereiche direkt in der Navigation.</small><span class="v1862-aktuell">Aktuell ausgewählt</span></button></div></section>
+    <section class="v1862-abschnitt" id="v186TagescheckZiel"><h4>Tages-Check</h4></section>
+    <p class="datenschutz"><strong>Datenschutz:</strong> Diese Einstellungen werden nur auf diesem Gerät gespeichert. Es werden keine Gesundheitsdaten automatisch übertragen.</p>
+  </div>
 </dialog>
 <dialog class="pwa-dialog" id="v186Hilfe">
   <div class="dialog-kopf"><h3>Einfach beginnen</h3><button id="v186HilfeZu" type="button" aria-label="Einführung schließen">×</button></div>
@@ -8269,7 +8317,7 @@
 </dialog>
 <script id="bedienoptimierung-v186-script">
 (() => {
-  const APP_VERSION = '1.8.6.1';
+  const APP_VERSION = '1.8.6.2';
   const MODUS_KEY = 'mein-begleiter-v1-8-6-ansicht';
   const START_KEY = 'mein-begleiter-v1-8-6-startauswahl';
   const ua = navigator.userAgent;
@@ -8293,18 +8341,19 @@
     const einfach = modus !== 'voll';
     localStorage.setItem(MODUS_KEY, einfach ? 'einfach' : 'voll');
     document.documentElement.classList.toggle('v186-einfach', einfach);
-    status.textContent = einfach ? 'Einfachmodus' : 'Vollständige Ansicht';
+    status.textContent = einfach ? 'Einfache Ansicht' : 'Vollständige Ansicht';
+    document.querySelectorAll('[data-v186-modus]').forEach(b => { const aktiv=b.dataset.v186Modus === (einfach?'einfach':'voll'); b.classList.toggle('aktiv',aktiv); b.setAttribute('aria-pressed',String(aktiv)); });
     if (melden && typeof toast === 'function') toast('Die Ansicht wurde geändert. Ihre Daten bleiben vollständig erhalten.');
   }
   modusSetzen(localStorage.getItem(MODUS_KEY) || empfohlen);
 
   menue.querySelectorAll('[data-v186-seite]').forEach(b => b.addEventListener('click', () => { if (typeof wechsleSeite === 'function') wechsleSeite(b.dataset.v186Seite); setMenue(false); }));
-  menue.querySelectorAll('[data-v186-modus]').forEach(b => b.addEventListener('click', () => { modusSetzen(b.dataset.v186Modus, true); setMenue(false); }));
+  document.querySelectorAll('[data-v186-modus]').forEach(b => b.addEventListener('click', () => { modusSetzen(b.dataset.v186Modus, true); if (menue.contains(b)) setMenue(false); }));
   menue.querySelector('[data-v186-aktion="tagescheck"]').addEventListener('click', () => { setMenue(false); document.querySelector('[data-neu][data-befinden="1"]')?.click(); });
   menue.querySelector('[data-v186-aktion="eintrag"]').addEventListener('click', () => { setMenue(false); document.querySelector('[data-neu]:not([data-befinden])')?.click(); });
 
   const start = document.getElementById('v186Start');
-  document.getElementById('v186Empfehlung').textContent = istHandy ? 'Empfehlung für dieses Smartphone: Einfach starten.' : istTablet ? 'Empfehlung für dieses Tablet: vollständige Ansicht. Der Einfachmodus bleibt wählbar.' : 'Empfehlung für PC oder Laptop: vollständige Ansicht.';
+  document.getElementById('v186Empfehlung').textContent = istHandy ? 'Empfehlung für dieses Smartphone: Einfach starten.' : istTablet ? 'Empfehlung für dieses Tablet: vollständige Ansicht. Die Einfache Ansicht bleibt wählbar.' : 'Empfehlung für PC oder Laptop: vollständige Ansicht.';
   document.querySelectorAll('[data-v186-start]').forEach(b => b.addEventListener('click', () => { const wahl = b.dataset.v186Start === 'empfohlen' ? empfohlen : b.dataset.v186Start; modusSetzen(wahl); localStorage.setItem(START_KEY, 'gesehen'); start.close(); setTimeout(() => document.getElementById('v186Hilfe').showModal(), 180); }));
   const startZeigen = () => { if (!localStorage.getItem(START_KEY) && !document.querySelector('dialog[open]')) start.showModal(); };
   if (!localStorage.getItem(START_KEY)) {
@@ -8317,7 +8366,19 @@
   const hilfeZu = () => hilfe.close();
   document.getElementById('v186HilfeZu').addEventListener('click', hilfeZu);
   document.getElementById('v186HilfeFertig').addEventListener('click', hilfeZu);
-  menue.querySelector('[data-v186-hilfe]').addEventListener('click', () => { setMenue(false); hilfe.showModal(); });
+  document.querySelectorAll('[data-v186-hilfe]').forEach(b => b.addEventListener('click', () => { if (menue.contains(b)) setMenue(false); document.getElementById('v186Einstellungen')?.close(); hilfe.showModal(); }));
+
+  const einstellDialog = document.getElementById('v186Einstellungen');
+  menue.querySelector('[data-v186-einstellungen]').addEventListener('click', () => { setMenue(false); einstellDialog.showModal(); });
+  const desktopNav=document.querySelector('.seitenleiste .nav');
+  if(desktopNav){const einstellKnopf=document.createElement('button');einstellKnopf.type='button';einstellKnopf.className='nav-knopf';einstellKnopf.innerHTML='<span>⚙️</span><span>Einstellungen</span>';einstellKnopf.addEventListener('click',()=>einstellDialog.showModal());desktopNav.appendChild(einstellKnopf);}
+  document.getElementById('v186EinstellungenZu').addEventListener('click', () => einstellDialog.close());
+  const SCHRIFT_KEY='mein-begleiter-v1-8-6-schriftgroesse';
+  function schriftSetzen(wert){ const erlaubt=['normal','gross','sehr-gross']; if(!erlaubt.includes(wert)) wert='normal'; document.documentElement.classList.remove('schrift-normal','schrift-gross','schrift-sehr-gross'); document.documentElement.classList.add('schrift-'+wert); localStorage.setItem(SCHRIFT_KEY,wert); document.querySelectorAll('[data-v186-schrift]').forEach(b=>{const aktiv=b.dataset.v186Schrift===wert;b.classList.toggle('aktiv',aktiv);b.setAttribute('aria-pressed',String(aktiv));}); }
+  document.querySelectorAll('[data-v186-schrift]').forEach(b=>b.addEventListener('click',()=>schriftSetzen(b.dataset.v186Schrift)));
+  schriftSetzen(localStorage.getItem(SCHRIFT_KEY)||'normal');
+  const tagescheckKarte=document.querySelector('.tc-einstellungen'), tagescheckZiel=document.getElementById('v186TagescheckZiel');
+  if(tagescheckKarte&&tagescheckZiel)tagescheckZiel.appendChild(tagescheckKarte);
 
   function optionenSortieren(select, oben = [], unten = []) {
     if (!select) return;

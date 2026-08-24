@@ -1,4 +1,4 @@
-MEIN BEGLEITER 1.8.6.1 PWA – SICHERUNGSKOMPATIBILITÄTSFIX
+MEIN BEGLEITER 1.8.6.2 PWA – SICHERUNGSKOMPATIBILITÄTSFIX
 
 1. ERSTER START
 
@@ -12,7 +12,7 @@ Keine Auswahl löscht oder verändert Daten.
 2. MENÜ
 
 Auf Smartphone und Tablet öffnet „Mehr“ das übersichtliche Bereichsmenü.
-Im Einfachmodus sind direkt erreichbar:
+Im Einfache Ansicht sind direkt erreichbar:
 - Meine Übersicht
 - Tages-Check
 - Neuer Eintrag
@@ -24,7 +24,7 @@ Im Einfachmodus sind direkt erreichbar:
 3. ANSICHT WECHSELN
 
 Öffnen Sie „Mehr“ und wählen Sie unter „Ansicht“:
-- Einfachmodus
+- Einfache Ansicht
 - Vollständige Ansicht
 
 Die Daten bleiben beim Wechsel vollständig erhalten. Die Auswahl wird nur auf

@@ -2,7 +2,7 @@
   "id": "/Mein-Begleiter-Handy-Einfachmodus-Test/",
   "name": "Mein Begleiter – Handy-Einfachmodus-Test",
   "short_name": "MB Einfach",
-  "description": "Mein Begleiter 1.8.6.1: Sicherungskompatibilitätsfix für 1.8.5.1 mit Handy-Einfachmodus.",
+  "description": "Mein Begleiter 1.8.6.2: Tages-Check-, Einstellungs- und Lesbarkeitsfix für 1.8.5.1 mit Handy-Einfachmodus.",
   "lang": "de-DE",
   "dir": "ltr",
   "start_url": "/Mein-Begleiter-Handy-Einfachmodus-Test/?source=pwa",

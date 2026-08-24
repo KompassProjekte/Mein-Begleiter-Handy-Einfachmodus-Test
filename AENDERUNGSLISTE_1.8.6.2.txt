@@ -1,0 +1,27 @@
+MEIN BEGLEITER 1.8.6.2 – ÄNDERUNGSLISTE
+
+Tages-Check
+- Reduzierte Darstellung innerhalb des kompatiblen Eintragsmodells.
+- Termin-, Arzt-, Kosten-, Maßnahmen-, Buch- und Bemerkungsfelder ausgeblendet.
+- Eindeutige Erklärung und Aktion „Tages-Check speichern“.
+- Nur eine Aktionsleiste; Eingabefelder bleiben erreichbar.
+
+Einstellungen und Ansichten
+- Tages-Check-Einstellungen aus „Sicherung & Gerätewechsel“ entfernt.
+- Eigener Schaltknopf „⚙️ Einstellungen“.
+- Schriftgrößen Normal, Groß und Sehr groß.
+- Begriffe „Einfache Ansicht“ und „Vollständige Ansicht“.
+- Symbole 👁️ und ▦; aktive Ansicht eindeutig markiert.
+- „Einführung und Hilfe anzeigen“ als eigenständige Aktion.
+
+Praxistest-Rückmeldung
+- Lesbare Textdatei über „Rückmeldung herunterladen“.
+- Technisches JSON nur unter „Weitere Dateiformate“.
+- Kein automatischer Versand und keine automatische Aufnahme von Gesundheitsdaten.
+
+Kompatibilität
+- Datenstruktur und lokaler Speicherschlüssel bleiben unverändert.
+- Sicherungen aus 1.8.3, 1.8.4, 1.8.5, 1.8.5.1, 1.8.6 und 1.8.6.1
+  werden weiterhin geprüft und akzeptiert.
+- GitHub-Pages-Adresse, PWA-ID und QR-Code bleiben unverändert.
+- Neuer Service-Worker-Cache: Version 1.8.6.2.

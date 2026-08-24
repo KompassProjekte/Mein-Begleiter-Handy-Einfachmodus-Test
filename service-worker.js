@@ -1,4 +1,4 @@
-const CACHE = 'mein-begleiter-handy-einfachmodus-cache-v1-8-6-1';
+const CACHE = 'mein-begleiter-handy-einfachmodus-cache-v1-8-6-2';
 const BASIS = '/Mein-Begleiter-Handy-Einfachmodus-Test/';
 const PFLICHTDATEIEN = [
   BASIS,
