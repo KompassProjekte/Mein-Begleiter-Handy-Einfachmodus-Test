@@ -1,0 +1,16 @@
+KURZANLEITUNG – + NEU-KLAPPMENÜ
+
+1. Auf „+ Neu“ tippen oder klicken.
+2. Den gewünschten Bereich auswählen.
+3. Die erforderlichen Angaben eintragen.
+4. Die Schaltfläche „Speichern“ im geöffneten Bereich verwenden.
+
+Es ist immer nur ein Bereich geöffnet. Beim Wechsel in einen anderen Bereich
+fragt Mein Begleiter nach, wenn ungespeicherte Angaben vorhanden sind.
+
+„Dokument hinzufügen“ führt in das vollständige Dokumentenzentrum. Dort können
+eine oder mehrere Dateien ausgewählt oder mit der Kamera aufgenommen werden.
+
+„Tages-Check“ öffnet das bewährte vollständige Tages-Check-Formular.
+
+Bestehende Einträge werden weiterhin über „Ändern“ bearbeitet.

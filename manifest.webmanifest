@@ -1,8 +1,8 @@
 {
   "id": "/Mein-Begleiter-Handy-Einfachmodus-Test/",
-  "name": "Mein Begleiter – Handy-Einfachmodus-Test",
-  "short_name": "MB Einfach",
-  "description": "Mein Begleiter 1.8.6.2: Tages-Check-, Einstellungs- und Lesbarkeitsfix für 1.8.5.1 mit Handy-Einfachmodus.",
+  "name": "Mein Begleiter – + Neu-Klappmenü-Test",
+  "short_name": "MB + Neu",
+  "description": "Mein Begleiter 1.8.6.1: übersichtlicher Neueintrag über ein Klappmenü.",
   "lang": "de-DE",
   "dir": "ltr",
   "start_url": "/Mein-Begleiter-Handy-Einfachmodus-Test/?source=pwa",
@@ -49,8 +49,8 @@
       ]
     },
     {
-      "name": "Neuer Eintrag",
-      "short_name": "Eintrag",
+      "name": "+ Neu",
+      "short_name": "+ Neu",
       "url": "/Mein-Begleiter-Handy-Einfachmodus-Test/#eintrag",
       "icons": [
         {

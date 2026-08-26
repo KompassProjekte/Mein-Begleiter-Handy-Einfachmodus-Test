@@ -1,0 +1,18 @@
+GITHUB-UPLOAD – VERSION 1.8.6.1
+
+Repository: Mein-Begleiter-Handy-Einfachmodus-Test
+
+1. ZIP-Datei auf dem PC vollständig entpacken.
+2. Im Repository „Datei hinzufügen“ und „Dateien hochladen“ wählen.
+3. ALLE Inhalte des entpackten Ordners gemeinsam hochladen. Nicht den
+   übergeordneten Ordner und nicht die ZIP-Datei als Website hochladen.
+4. Prüfen: index.html, manifest.webmanifest, service-worker.js und offline.html
+   liegen direkt in der Wurzel. Der Ordner icons enthält alle fünf PNG-Dateien.
+5. Änderung mit „Mein Begleiter 1.8.6.1 bereitgestellt“ übernehmen.
+6. Unter Einstellungen > Seiten bleibt die Quelle Hauptzweig und /(Wurzel).
+   Wenn dies bereits eingestellt ist, ist kein erneutes Speichern nötig.
+7. Nach erfolgreichem GitHub-Pages-Arbeitsablauf die Startadresse öffnen.
+8. Vor „Jetzt aktualisieren“ eine vollständige Sicherung erstellen.
+9. Sichtbare Version 1.8.6.1 und den Knopf „+ Neu“ kontrollieren.
+
+WICHTIG: Keine .mbg-Datei und keine persönlichen Daten zu GitHub hochladen.

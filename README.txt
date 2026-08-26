@@ -1,37 +1,27 @@
 MEIN BEGLEITER
-Version 1.8.6.2 PWA – Tages-Check-, Einstellungs- und Lesbarkeitsfix
+Version 1.8.6.1 PWA – + Neu-Klappmenü-Test
 
-TESTAUSGABE – NUR MIT ERFUNDENEN DATEN VERWENDEN
+Eigenständige Testversion auf Grundlage der unveränderten Version 1.8.6.
 
-Start: index.html
+ZIEL
+Der zentrale Einstieg „+ Neu“ bündelt sieben häufige Vorgänge in einem
+übersichtlichen Klappmenü. Es ist immer nur ein Formular geöffnet.
 
-Diese Ausgabe trennt den Tages-Check vom vollständigen Eintrag, bündelt alle
-Darstellungs- und Tages-Check-Einstellungen unter einem eigenen Schaltknopf
-und verbessert die Lesbarkeit auf Smartphone, Tablet und PC.
+ENTHALTEN
+- vollständige PWA mit unveränderten Datenstrukturen der Linie 1.8
+- + Neu-Klappmenü für Eintrag, Frage, Termin, Medikament, Gabe,
+  Dokument und Tages-Check
+- sicherer Gerätewechsel und bestehende Sicherungswege
+- vollständige Dokumentenablage
+- Offline-Funktion und eigener Cache 1.8.6.1
+- 0 persönliche Datensätze im Auslieferungszustand
 
-Wesentliche Änderungen 1.8.6.2:
-- Tages-Check zeigt nur Tageswerte und freiwillige Körperwerte.
-- Nur eine Aktionsleiste im Tages-Check; kein verdeckter Inhalt.
-- Eigener Bereich „Einstellungen“ statt Ablage unter der Sicherung.
-- Schriftgröße: Normal, Groß oder Sehr groß.
-- Einheitliche Bezeichnungen „Einfache Ansicht“ und „Vollständige Ansicht“.
-- Verständlicher Download der Praxistest-Rückmeldung; technische Datei nur
-  unter „Weitere Dateiformate“.
-- Sicherungskompatibilität aus 1.8.6.1 bleibt vollständig erhalten.
+WICHTIG
+Diese Testversion nur mit erfundenen Daten erproben. Eine verschlüsselte
+Sicherungsdatei niemals in das öffentliche GitHub-Repository hochladen.
+Die Anwendung ersetzt keine ärztliche Beratung oder Behandlung.
 
-Wichtige Unterlagen:
-- ANLEITUNG_HANDY_EINFACHMODUS.txt
-- ANLEITUNG_SICHERER_GERAETEWECHSEL.html
-- INSTALLATIONSANLEITUNG.html
-- DATENSCHUTZ_UND_SICHERHEIT.txt
-- AENDERUNGSLISTE_1.8.6.2.txt
-- PRUEFPROTOKOLL.html
-- TESTBOGEN.html
-- GITHUB_UPLOAD_ANLEITUNG_1.8.6.txt
-- SICHERUNGSKOMPATIBILITAETSFIX_1.8.6.1.txt
-
-Unveränderte Testadresse (der vorhandene QR-Code bleibt gültig):
+STARTADRESSE NACH DEM GITHUB-UPLOAD
 https://kompassprojekte.github.io/Mein-Begleiter-Handy-Einfachmodus-Test/
 
-Die bisherigen Versionen 1.8.4, 1.8.5.1, 1.8.6 und 1.8.6.1 bleiben unverändert.
-Entwickelt von Lothar & Nimbus · Stand: 24.08.2026
+Entwickelt von Lothar & Nimbus · Stand: 25.08.2026

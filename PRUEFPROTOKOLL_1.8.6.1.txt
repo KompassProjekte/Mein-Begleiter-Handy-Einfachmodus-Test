@@ -1,0 +1,27 @@
+TECHNISCHES PRÜFPROTOKOLL – VERSION 1.8.6.1
+Stand: 25.08.2026
+
+BESTANDEN
+- 12 von 12 eingebetteten JavaScript-Blöcken syntaktisch geprüft.
+- manifest.webmanifest ist gültiges JSON.
+- STARTDATEN ist leer: 0 persönliche Datensätze.
+- Sieben Klappbereiche und zugehörige Bedienwege vorhanden.
+- Nur ein Bereich kann gleichzeitig geöffnet werden.
+- Warnung bei ungespeicherten Änderungen implementiert.
+- Obere doppelte Eintragsaktionen entfernt; untere Aktionen erhalten.
+- Bestehende Datenfelder und Datenstruktur-Version unverändert.
+- Importkompatibilität für 1.8.3, 1.8.4, 1.8.5, 1.8.6 und 1.8.6.1.
+- Service-Worker-Cache auf v1-8-6-1 erhöht.
+- Manifest-ID, Start-URL, Scope und Iconpfade weiterhin auf die getrennte
+  GitHub-Pages-Unteradresse ausgerichtet.
+- Keine neuen Netzwerkübertragungen für Nutzdaten eingebaut.
+
+NOCH AUF ECHTEN GERÄTEN ZU PRÜFEN
+- Bedienung im Hoch- und Querformat auf Smartphone und Samsung A9.
+- Dateiauswahl und Kamera im Dokumentenzentrum.
+- Tastaturüberlagerung, Scrollposition und Touch-Ziele.
+- Update von installierter 1.8.6 auf 1.8.6.1 sowie Offline-Start.
+
+HINWEIS ZUR ABNAHME
+Physische Geräte- und Browserprüfungen dürfen erst nach Lothars praktischem
+Test als bestanden bezeichnet werden.

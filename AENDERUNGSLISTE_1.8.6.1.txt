@@ -1,0 +1,17 @@
+MEIN BEGLEITER 1.8.6.1 – ÄNDERUNGEN GEGENÜBER 1.8.6
+
+1. „+ Neuer Eintrag“ wurde durch den eindeutigen Einstieg „+ Neu“ ersetzt.
+2. Neues Klappmenü mit sieben getrennten Bereichen: Eintrag/Erlebnis,
+   Arztfrage, Termin, Medikament, Medikamentengabe, Dokument und Tages-Check.
+3. Es kann nur ein Bereich gleichzeitig geöffnet sein.
+4. Beim Wechseln oder Schließen wird vor dem Verlust ungespeicherter
+   Änderungen gewarnt.
+5. Der Kopf des neuen Fensters enthält nur Titel und Schließen-Schaltfläche.
+6. Speichern und Abbrechen stehen direkt beim jeweiligen Formular.
+7. Doppelte obere Speichern-/Abbrechen-Schaltflächen des bisherigen
+   Eintragsdialogs wurden entfernt.
+8. Bestehende Datenstrukturen, Bearbeitung, Berichte, Sicherungen und
+   Gerätewechsel bleiben kompatibel.
+9. Manifest, sichtbare Version und Service-Worker-Cache wurden auf 1.8.6.1
+   aktualisiert.
+10. Die Auslieferung enthält weiterhin 0 persönliche Datensätze.

@@ -1,0 +1,29 @@
+TESTBOGEN – + NEU-KLAPPMENÜ 1.8.6.1
+
+Gerät: ____________________ Browser: ____________________ Datum: __________
+
+□ Version 1.8.6.1 wird angezeigt.
+□ „+ Neu“ öffnet das Klappmenü.
+□ Im Kopf stehen nur Titel und ×.
+□ Es ist immer nur ein Bereich geöffnet.
+□ Ungespeicherte Angaben lösen vor Wechsel/Schließen eine Warnung aus.
+□ Eintrag oder Erlebnis lässt sich speichern.
+□ Arztfrage lässt sich speichern und zuordnen.
+□ Termin lässt sich speichern.
+□ Medikament lässt sich speichern.
+□ Medikamentengabe lässt sich speichern.
+□ Dokumentenzentrum wird korrekt geöffnet.
+□ Tages-Check wird korrekt geöffnet.
+□ Bestehende Einträge lassen sich weiterhin ändern.
+□ Darstellung im Handy-Hochformat ist vollständig.
+□ Darstellung im Handy-Querformat ist vollständig.
+□ Darstellung auf dem Samsung A9 ist vollständig.
+□ Keine Schaltfläche wird von Browser- oder Systemleisten verdeckt.
+□ Offline-Start funktioniert nach dem ersten vollständigen Laden.
+□ Vorhandene Testdaten bleiben nach der Aktualisierung erhalten.
+
+Beobachtung / Fehler:
+________________________________________________________________________
+
+Verbesserungsvorschlag:
+________________________________________________________________________
